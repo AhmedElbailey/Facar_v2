@@ -321,6 +321,7 @@ class Home extends Component {
           <form
             className="publisher__gmail-form"
             onSubmit={this.sendGmailHandler}
+            netlify
           >
             <section className="about__section">
               <h2>Send Email</h2>

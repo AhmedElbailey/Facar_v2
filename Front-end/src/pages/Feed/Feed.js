@@ -374,7 +374,7 @@ class Feed extends Component {
           onFinishEdit={this.finishEditHandler}
         />
         <section className="feed__status">
-          <form onSubmit={this.statusUpdateHandler}>
+          <form netlify onSubmit={this.statusUpdateHandler}>
             <Input
               type="text"
               placeholder="Your status"

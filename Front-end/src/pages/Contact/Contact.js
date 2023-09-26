@@ -121,7 +121,11 @@ class Contact extends Component {
     return (
       <Fragment>
         <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
-        <form className="about-form" onSubmit={this.contactUpdateHandler}>
+        <form
+          netlify
+          className="about-form"
+          onSubmit={this.contactUpdateHandler}
+        >
           <section className="about__section">
             <h2>Phone Number</h2>
             <Input

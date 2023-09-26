@@ -20,6 +20,7 @@ const Textarea = (props) => (
           props.onChange(props.id, e.target.value, e.target.files)
         }
         onBlur={props.onBlur}
+        disabled={props.disabled || false}
       />
     )}
     {props.control === "textarea" && (
@@ -34,7 +35,6 @@ const Textarea = (props) => (
         value={props.value}
         onChange={(e) => props.onChange(props.id, e.target.value)}
         onBlur={props.onBlur}
-        disabled={props.disabled || false}
       />
     )}
   </div>

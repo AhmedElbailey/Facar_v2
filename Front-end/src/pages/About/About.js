@@ -184,7 +184,7 @@ class About extends Component {
     return (
       <Fragment>
         <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
-        <form className="about-form" onSubmit={this.imageUpdateHandler}>
+        <form netlify className="about-form" onSubmit={this.imageUpdateHandler}>
           <section className="about__section">
             <h2>Avatar Image</h2>
             <Input
@@ -197,7 +197,7 @@ class About extends Component {
             Update
           </Button>
         </form>
-        <form className="about-form" onSubmit={this.aboutUpdateHandler}>
+        <form netlify className="about-form" onSubmit={this.aboutUpdateHandler}>
           <section className="about__section">
             <h2>Full Name</h2>
             <Input
