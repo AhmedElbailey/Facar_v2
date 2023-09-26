@@ -34,6 +34,7 @@ const Textarea = (props) => (
         value={props.value}
         onChange={(e) => props.onChange(props.id, e.target.value)}
         onBlur={props.onBlur}
+        disabled={props.disabled || false}
       />
     )}
   </div>
