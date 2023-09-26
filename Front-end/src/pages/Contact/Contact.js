@@ -26,7 +26,7 @@ class Contact extends Component {
             }
           `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -77,7 +77,7 @@ class Contact extends Component {
         }
       `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,

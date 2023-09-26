@@ -48,7 +48,7 @@ class Home extends Component {
             }
           `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -64,7 +64,9 @@ class Home extends Component {
           throw new Error("Fetching status failed!");
         }
         this.setState({
-          image: "http://localhost:8080/" + resData.data.publisherData.imageUrl,
+          image:
+            "https://facar-v2-api.onrender.com/" +
+            resData.data.publisherData.imageUrl,
           name: resData.data.publisherData.name,
           status: resData.data.publisherData.status,
           phone: resData.data.publisherData.phone,
@@ -128,7 +130,7 @@ class Home extends Component {
         page: page,
       },
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -151,7 +153,8 @@ class Home extends Component {
             return {
               ...post,
               imagePath: post.imageUrl,
-              userAvatar: "http://localhost:8080/" + post.creator.imageUrl,
+              userAvatar:
+                "https://facar-v2-api.onrender.com/" + post.creator.imageUrl,
               date: new Date(post.createdAt).toLocaleDateString("en-US"),
             };
           }),
@@ -169,7 +172,7 @@ class Home extends Component {
       const error = new Error("Publisher doesn't have a gmail address");
       return this.catchError(error);
     }
-    fetch("http://localhost:8080/sendGmail", {
+    fetch("https://facar-v2-api.onrender.com/sendGmail", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,

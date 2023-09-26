@@ -74,7 +74,7 @@ class App extends Component {
       `,
     };
     this.setState({ authLoading: true });
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -131,7 +131,7 @@ class App extends Component {
         }
       `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -31,7 +31,7 @@ class Feed extends Component {
         }
       `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -92,7 +92,7 @@ class Feed extends Component {
         page: page,
       },
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -116,7 +116,8 @@ class Feed extends Component {
             return {
               ...post,
               imagePath: post.imageUrl,
-              userAvatar: "http://localhost:8080/" + post.creator.imageUrl,
+              userAvatar:
+                "https://facar-v2-api.onrender.com/" + post.creator.imageUrl,
               date: new Date(post.createdAt).toLocaleDateString("en-US"),
             };
           }),
@@ -138,7 +139,7 @@ class Feed extends Component {
         }
       `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -186,7 +187,7 @@ class Feed extends Component {
       formData.append("oldPath", this.state.editPost.imagePath);
     }
 
-    fetch("http://localhost:8080/post-image", {
+    fetch("https://facar-v2-api.onrender.com/post-image", {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -244,7 +245,7 @@ class Feed extends Component {
           };
         }
 
-        return fetch("http://localhost:8080/graphql", {
+        return fetch("https://facar-v2-api.onrender.com/graphql", {
           method: "POST",
           body: JSON.stringify(graphqlQuery),
           headers: {
@@ -281,7 +282,7 @@ class Feed extends Component {
           createdAt: resData.data[resDataField].createdAt,
           imagePath: resData.data[resDataField].imageUrl,
           userAvatar:
-            "http://localhost:8080/" +
+            "https://facar-v2-api.onrender.com/" +
             resData.data[resDataField].creator.imageUrl,
         };
         this.setState((prevState) => {
@@ -331,7 +332,7 @@ class Feed extends Component {
       `,
     };
     this.setState({ postsLoading: true });
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,

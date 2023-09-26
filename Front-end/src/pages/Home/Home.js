@@ -36,7 +36,7 @@ class Home extends Component {
             }
           `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -52,7 +52,8 @@ class Home extends Component {
           throw new Error("Fetching status failed!");
         }
         this.setState({
-          image: "http://localhost:8080/" + resData.data.user.imageUrl,
+          image:
+            "https://facar-v2-api.onrender.com/" + resData.data.user.imageUrl,
           name: resData.data.user.name,
           status: resData.data.user.status,
         });
@@ -102,7 +103,7 @@ class Home extends Component {
         page: page,
       },
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +126,8 @@ class Home extends Component {
             return {
               ...post,
               imagePath: post.imageUrl,
-              userAvatar: "http://localhost:8080/" + post.creator.imageUrl,
+              userAvatar:
+                "https://facar-v2-api.onrender.com/" + post.creator.imageUrl,
               date: new Date(post.createdAt).toLocaleDateString("en-US"),
             };
           }),
@@ -165,7 +167,7 @@ class Home extends Component {
       formData.append("oldPath", this.state.editPost.imagePath);
     }
 
-    fetch("http://localhost:8080/post-image", {
+    fetch("https://facar-v2-api.onrender.com/post-image", {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -223,7 +225,7 @@ class Home extends Component {
           };
         }
 
-        return fetch("http://localhost:8080/graphql", {
+        return fetch("https://facar-v2-api.onrender.com/graphql", {
           method: "POST",
           body: JSON.stringify(graphqlQuery),
           headers: {
@@ -259,7 +261,7 @@ class Home extends Component {
           createdAt: resData.data[resDataField].createdAt,
           imagePath: resData.data[resDataField].imageUrl,
           userAvatar:
-            "http://localhost:8080/" +
+            "https://facar-v2-api.onrender.com/" +
             resData.data[resDataField].creator.imageUrl,
         };
         this.setState((prevState) => {
@@ -305,7 +307,7 @@ class Home extends Component {
           `,
     };
     this.setState({ postsLoading: true });
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,

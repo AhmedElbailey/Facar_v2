@@ -32,7 +32,7 @@ class About extends Component {
             }
           `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -63,7 +63,8 @@ class About extends Component {
     const formData = new FormData();
     formData.append("image", this.state.image);
 
-    fetch("http://localhost:8080/user-avatar", {
+    // fetch("http://localhost:8080/user-avatar", {
+    fetch("https://facar-v2-api.onrender.com/user-avatar", {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + this.props.token,
@@ -72,6 +73,7 @@ class About extends Component {
     })
       .then((res) => res.json())
       .then((fileResData) => {
+        console.log(fileResData);
         let imageUrl;
         if (this.state.editPost && !fileResData.filePath) {
           imageUrl = "undefined";
@@ -110,7 +112,7 @@ class About extends Component {
         }
       `,
     };
-    fetch("http://localhost:8080/graphql", {
+    fetch("https://facar-v2-api.onrender.com/graphql", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + this.props.token,
