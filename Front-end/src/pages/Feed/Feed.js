@@ -273,7 +273,7 @@ class Feed extends Component {
         if (this.state.editPost) {
           resDataField = "updatePost";
         }
-
+        console.log(object);
         const post = {
           _id: resData.data[resDataField]._id,
           title: resData.data[resDataField].title,
