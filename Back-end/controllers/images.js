@@ -22,6 +22,7 @@ exports.postImage = (req, res, next) => {
 
 exports.userAvatar = async (req, res, next) => {
   try {
+    console.log(req.file);
     const imagePath = req.file.path.replaceAll("\\", "/");
 
     // check authentication
